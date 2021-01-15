@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px solid black;">
+<aside style="display: inline-block;">
+<h1 style="background-color: blue">Nos spécialités</h1>
+	<ul class = "fil d'Ariane">
+  <li> <a href="{{path('immunologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’allergologie ou l’immunologie</font> </font> </a> </li>
+  <li> <a href="{{path('anesthesiologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’anesthésiologie </font> </font> </a> </li>
+  <li> <a href="{{path('cardiologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La cardiologie </font> </font> </a> </li>
+  <li> <a href="{{path('chirurgie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La chirurgie </font> </font> </a> </li>
+  <li> <a href="{{path('dermatologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La dermatologie </font> </font> </a> </li>
+  <li> <a href="{{path('gynecologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La gynécologie </font> </font> </a> </li>
+  <li> <a href="{{path('neurologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La neurologie </font> </font> </a> </li>
+  <li> <a href="{{path('odontologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’odontologie </font> </font> </a> </li>
+  <li> <a href="{{path('pediatrie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La pédiatrie </font> </font> </a> </li>
+  <li> <a href="{{path('radiotherapie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La radiothérapie </font> </font> </a> </li>
+  <li> <a href="{{path('infectiologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’infectiologie </font> </font> </a> </li>
+  <li> <a href="{{path('medecine_generale')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La médecine générale </font> </font> </a> </li>
+  <li> <a href="{{path('ophtalmologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’ophtalmologie </font> </font> </a> </li>
+  <li> <a href="{{path('psychiatrie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La psychiatrie </font> </font> </a> </li>
+  <li> <a href="{{path('urologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’urologie </font> </font> </a> </li>
+</ul>
+
+<img src="{{asset('/easyadmin/images/my-image.png')}}" title="my image" alt="My image">
+
+</section>
+<section style="width: 27cm;  vertical-align: top; display: inline-block;">
+<h1 style="background-color: #8546; width:30cm"> Vous venez en consultation</h1>
+Vous venez en consultation HS-Sénégal<br>
+Nos hôpitaux proposent des consultations dans toutes les spécialités, pour tous les âges.
+Au moment de prendre rendez-vous, assurez-vous de :<br>
+
+-prévoir avant l'heure de rendez-vous un peu de temps pour trouver le service où vous consultez dans l'hôpital<br>
+-vous munir d'une lettre de votre médecin traitant, qui peut vous être demandée<br>
+-le jour du rendez-vous, apporter vos documents administratifs et médicaux<br>
+{% if app.user %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('consultation')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('voir_rendezvous')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voir vos rendez-vous !!!</button>
+          </a></span></section>
+          {% else %}
+          <section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voire les rendez-vous ici !!!</button>
+          </a></span></section>
+          {% endif %}       
+<h1 style="background-color: #8546; width:30cm">Vous avez rendez-vous à l’hôpital pour une consultation ou une hospitalisation</h1>
+
+  Selon votre situation et les soins dont vous aurez besoin, votre hospitalisation peut être très 
+  courte - une journée - ou durer quelques jours à plusieurs mois dans certains cas. 
+  Il est également possible de bénéficier d'une hospitalisation à domicile.<br>
+ {% if app.user %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('consultation')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('voir_rendezvous')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voir vos rendez-vous !!!</button>
+          </a></span></section>
+          {% else %}
+          <section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voire les rendez-vous ici !!!</button>
+          </a></span></section>
+          {% endif %}
+ <h1 style="background-color: #8546; width:30cm">Les démarches à effectuer avant de venir à l’hôpital</h1>
+
+ Afin de bénéficier de la meilleure qualité d’accueil, vous devrez nous faire parvenir les éléments administratifs de votre dossier patient le plus tôt possible avant de vous présenter à l'hôpital, pour une consultation comme pour une hospitalisation.
+ADMISSION<br>
+Simplifiez votre parcours : la préadmission est valable pour tous les soins<br>
+Les documents que vous devez avoir sur vous lors de votre passage à l’hôpital<br>
+{% if app.user %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('consultation')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('voir_rendezvous')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voir vos rendez-vous !!!</button>
+          </a></span></section>
+          {% else %}
+          <section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voire les rendez-vous ici !!!</button>
+          </a></span></section>
+          {% endif %}
+ 
+ <h1 style="background-color: #8546; width:30cm">Permanences d’accès aux soins de santé à l’HS-Sénégal</h1>
+ Les permanences d'accès aux soins de santé - PASS - permettent une prise en charge médicale et sociale pour des personnes ayant besoin de soins mais ayant du mal à y accéder, du fait de l’absence de protection sociale, de leurs conditions de vie, ou de leurs difficultés financières. Elles donnent accès à des consultations de médecine générale ou spécialisée.
+Il existe une permanence d’accès aux soins de santé (PASS) dans la plupart des hôpitaux de l’AP-HP.<br>
+
+Pour en savoir plus sur les actions de l'AP-HP en faveur de l'égalité d'accès aux soins, notamment pour les plus démunis.
+Si vous avez besoin de soins, si vous n’avez pas d’assurance maladie, si vous avez des problèmes financiers :
+Vos difficultés ne doivent pas vous empêcher de venir à l’hôpital.
+Vous pouvez vous rendre à la Permanence d’accès aux soins de santé (PASS) où vous serez accueilli par des professionnels de santé.
+Un médecin vous examinera et vous orientera :<br>
+- vers une assistante sociale : elle vous conseillera dans vos démarches administratives (assurance maladie, CMU de base, CMU complémentaire, AME …) et vous accompagnera dans votre parcours de soins,<br>
+- vers un médecin spécialisé si votre état de santé nécessite d’autres examens.<br>
+Vous pourrez avoir accès à des soins, examens complémentaires et médicaments si vous devez commencer rapidement un traitement.<br>
+Les permanences d'accès aux soins de santé permettent aux plus démunis :<br>
+- d'aller dans une consultation de médecine générale ou spécialisée ;<br>
+- de recevoir des soins dentaires dans une PASS bucco-dentaire ;<br>
+- de bénéficier de soins infirmiers, de prises de sang, d’examens radiologiques ;<br>
+- d'obtenir des médicaments prescrits par le médecin dans le cadre de la PASS.
+Il y a trois catégories de PASS à l’AP-HP : les généralistes, les bucco-dentaires, et les psychiatriques<br>
+{% if app.user %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('consultation')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('voir_rendezvous')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voir vos rendez-vous !!!</button>
+          </a></span></section>
+          {% else %}
+          <section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voire les rendez-vous ici !!!</button>
+          </a></span></section>
+          {% endif %}
+
+</section>
+{% endblock %}

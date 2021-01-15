@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Adresse</th>
+                <th>Naissance</th>
+                <th>Sexe</th>
+                <th>Password</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.telephone }}</td>
+                <td>{{ user.adresse }}</td>
+                <td>{{ user.naissance ? user.naissance|date('Y-m-d') : '' }}</td>
+                <td>{{ user.sexe }}</td>
+                <td></td> 
+                <td>
+                  <button class="btn btn-outline-success" type="submit"> <a href="{{ path('user_show', {'id': user.id}) }}">Visualiser vos infos</a> </button>
+                   <button class="btn btn-outline-success" type="submit"> <a href="{{ path('modifier_user', {'id': user.id}) }}">Modifier mon profile</a> </button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{# <button class="btn btn-outline-success" type="submit"> <a href="{{ path('inscription') }}">Ajouter un nouveau utilisateur</a> </button> #}
+{% endblock %}

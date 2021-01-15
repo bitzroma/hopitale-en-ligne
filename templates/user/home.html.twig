@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class = "alert alert-ignore alert-light">
+  <button type = "button" class = "close" data-licencier = "alert"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> & times; </ police> </font> </button>
+  <strong> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Bonjour  </font></font> </strong> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"></font> </font> <a href = "#" class = "alert-link"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> {% if app.user %}
+        
+            {{ app.user.nom}} {{ app.user.prenom}}
+        
+    {% endif %} </font> !!!</font> </a> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">, nous vous souhaitons biienvenu sur cette espace.
+
+  
+
+  <h1 class = "display-3"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">
+   Bienvenu sur votre hopitale en ligne! </font> </font> </ h1>
+  <p class = "lead"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">
+   Bienvenue dans l'espace RDV en ligne de l'Hopital la Solution du Sénégal. Nous vous proposons la prise de rendez-vous directe et la demande de rendez-vous (selon la spécialité demandée)
+La liste des consultations et des examens évolue et s'étend progressivement à d'autres spécialités.
+N'hésitez pas à revenir régulièrement dans cet espace. </font> </font> </p>
+
+  <hr class = "my-4">
+  <p> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">
+  Nous vous porposons un ensemble de services pour la prise en charge de tous vos problémes en matiére 
+  de Santé. 
+    </font> </font> </p>
+  <p class = "lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button"> <font style = "vertical-align: inherit;">
+     <font style = "vertical-align: inherit;"> Apprendre encore plus </font> </font> </a>
+  </p>
+
+</font></font> </div>
+{% if app.user %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('consultation')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="/rendezvous/tous">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voir vos rendez-vous !!!</button>
+          </a></span></section>
+          {% else %}
+          <section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voire les rendez-vous ici !!!</button>
+          </a></span></section>
+          {% endif %}
+
+{% endblock %}

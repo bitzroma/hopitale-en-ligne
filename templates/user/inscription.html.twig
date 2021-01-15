@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+<h6 class = "card-subtitle text-muted"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Sous-titre de la carte de support </ font > </font> </h6>
+  </div>
+  <svg xmlns = "http://www.w3.org/2000/svg" class = "d-block user-select-none" width = "100%" height = "200" aria-label = "Espace réservé: casquette d'image "focusable =" false "role =" img "preserveAspectRatio =" tranche xMidYMid "viewBox =" 0 0318 180 "style =" font-size: 1.125rem; text-anchor: middle ">
+    <rect width = "100%" height = "100%" fill = "# 868e96"> </rect>
+    <text x = "50%" y = "50%" fill = "# dee2e6" dy = ". 3em"> Cap de l'image </text>
+  </svg>
+  <div class = "card-body">
+    <p class = "card-text"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">
+     Un exemple de texte rapide à construire sur le titre de la carte et à constituer l'essentiel du contenu de la carte.
+     L'objectif premier d'un framework est d'améliorer la productivité des développeurs qui l'utilisent. Plutôt sympa, non ? Souvent organisé en 
+     différents composants, un framework offre la possibilité au développeur final d'utiliser tel ou tel 
+     composant pour lui faciliter le développement, et lui permet ainsi de se concentrer sur le plus important.
+Prenons un exemple concret. Il existe dans Symfony un composant qui gère les formulaires HTML : leur affichage,
+ leur validation, etc. Le développeur qui l'utilise se concentre sur l'essentiel dans son application :
+  chaque formulaire effectue une action, et c'est cette action qui est importante, pas les formulaires.
+   Étendez ce principe à toute une application ou tout un site Internet, et vous comprenez l'intérêt d'un 
+   framework ! Autrement dit, le framework s'occupe de la forme et permet au développeur de se concentrer sur 
+   e fond. </font> </font> </p>
+  </div>
+  
+  <div class = "card-body">
+    <a href="#" class="card-link"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Lien de la carte </font> < / font> </a>
+    <a href="#" class="card-link"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Un autre lien </font> </ police> </a>
+  </div>
+  
+
+<div class = "card mb-3" style="width: 75%;margin-left: 130px; background-color: ">
+  <h3 class = "card-header"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">Formulaire d'inscription</font> </font> </h3>
+  <div class = "card-body">
+    <h5 class = "card-title"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">
+    
+
+{{ form_start(form , {'attr': {'novalidate': 'novalidate'}}) }}
+
+    {{ form_row(form.nom, {'label':'Nom ','attr':{'placeholder': 'Votre nom de famille'}}) }}<br>
+    {{ form_row(form.prenom, {'label':'Prénom ','attr':{'placeholder': 'Votre prénom'}}) }}<br>
+    {{ form_row(form.username, {'label':'Username ','attr':{'placeholder': 'username...'}}) }}<br>
+    {{ form_row(form.sexe, {'label':'Sexe','attr':{'placeholder': 'Votre sexe'}}) }}<br>
+    {{ form_row(form.email, {'label':'Adresse Email ','attr':{'placeholder': 'Votre adresse email...'}}) }}<br>
+    {{ form_row(form.password, {'label':'Mot de Passe ','attr':{'placeholder': 'Votre mot de passe'}}) }}<br>
+    {{ form_row(form.naissance, {'label':'Date de Naissance ','attr':{'placeholder': 'Votre date de naissance'}}) }}<br>
+    {{ form_row(form.adresse, {'label':'Adresse ','attr':{'placeholder': 'Votre Adresse de residence'}}) }}<br>
+    {{ form_row(form.telephone, {'label':'Téléphone ','attr':{'placeholder': '+221777777777'}}) }}<br><br>
+
+    <button type='submit'>s'inscrire</button>
+{{ form_end(form) }}
+<br>
+</ h5>
+    
+</div>
+
+
+
+
+{% endblock %}

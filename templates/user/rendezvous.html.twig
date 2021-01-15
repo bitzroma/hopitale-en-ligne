@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class = "card mb-3" style="width: 60%;margin-left: 220px">
+  <h3 class = "card-header"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">Formulaire d'inscription</font> </font> </h3>
+  <div class = "card-body">
+    <h5 class = "card-title"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">
+    
+{{ form_start(form , {'attr': {'novalidate': 'novalidate'}}) }}
+
+    
+    {{ form_row(form.typeRv, {'label':'Type de Rendez-vous: '}) }}<br>
+    {{ form_row(form.dateRv, {'label':'Date et Heure du Rendez-vous: '}) }}<br>
+    {{ form_row(form.lieu, {'label':'Lieu du Rendez-vous: '}) }}<br>
+    {{ form_row(form.docteur, {'label':'Medecin: '}) }}<br>
+    {{ form_row(form.user, {'label':'Votre email: '}) }}<br>
+    
+    
+
+    <button type="submit">Prendre un rendez-vous</button>
+{{ form_end(form) }}
+<br>
+</ h5>
+{% endblock %}

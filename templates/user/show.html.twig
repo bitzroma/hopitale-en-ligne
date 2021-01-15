@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>Voici les informations de votre profile:</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id:</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom:</th>
+                <td>{{ user.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom:</th>
+                <td>{{ user.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom d'utilisateur:</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Telephone:</th>
+                <td>{{ user.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Adresse:</th>
+                <td>{{ user.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Naissance:</th>
+                <td>{{ user.naissance ? user.naissance|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Sexe:</th>
+                <td>{{ user.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Mot de passe:</th>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+   <button class="btn btn-outline-success" type="submit"><a href="{{ path('home') }}">Retour</a></button>
+
+   <button class="btn btn-outline-success" type="submit"> <a href="{{ path('modifier_user', {'id': user.id}) }}">Modifier</a></button>
+
+    {# {{ include('user/_delete_form.html.twig') }} #}
+{% endblock %}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <nav class="navbar navbar-dark bg-primary">
+    
+<section style="display: inline-block;">
+
+ <h1 style="margin-left: 15%; width: 100%">Hopitale La Solution Votre Santé notre priorité !!!</h1>
+ </section>
+<section style="display: inline-block;">
+ <span style="font-size: 12pt; background-color: ;margin-right: 2%">
+ {% if app.user %}
+Connecté:  {{ app.user.username }}
+<a class="navbar-brand" href="user/{{ app.user.id}}">
+    <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Profile</button>
+    </a></span>
+    
+        {% else %}
+        
+        <a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 3cm">S'inscrire</button>
+          </a>
+        
+        {% endif %}
+
+</section>
+
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{path('home')}}">
+    <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Accueil</button>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{path('espace_assistance')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Assistance</button>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('espace_patient')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Espace patient</button>
+          </a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{path('maladie')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <button class="btn btn-outline-success me-2" type="button" style="width: 5cm">Nos spécialités</button>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('espace_covid_19')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Covid-19</button>
+          </a>
+        </li>
+        {% if not app.user %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 3cm">Connexion</button>
+          </a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+        <a class="nav-link" href="{{path('app_logout')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 3cm">Deconnexion</button>
+          </a>
+        </li>
+        {% endif %}
+                
+      </ul>
+      <form class="d-flex" style="width: 6cm">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Recherche</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+        {% block body %}{% endblock %}
+        <div class = "alert alert-ignore alert-info">
+  <button type = "button" class = "close" data-licencier = "alert"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"></ police> </font> </button>
+  <strong> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">  </font></font> </strong> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> </font> </font> </a> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">
+</font></font> 
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;">
+<h5>A propos de HSS:</h5>
+Rendez-vous en ligne<br>
+Pour vos soins<br>
+Aide d'urgence<br>
+</section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px;">
+<h5>Sociale:</h5>
+Chercher un guide<br>
+Consultation gratuitS 
+</section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;">
+<h5>Services urgences:</h5>
+
+</section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;">
+<h5>Numéros d'urgences:</h5>
+Aide santé: 800005050<br>
+Sumu assurance: 1515<br>
+</section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px;">
+<h5>Infos:</h5>
+Omar Biteye +221781501197<br>
+Email: bitzroma101@gmail.com 
+</section>
+
+</div>
+        {% block javascripts %}{% endblock %}
+    </body>
+   
+</html>
+

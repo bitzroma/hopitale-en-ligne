@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px solid black;">
+<aside style="display: inline-block;">
+<h1 style="background-color: blue">Nos spécialités</h1>
+	<ul class = "fil d'Ariane">
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’allergologie ou l’immunologie</font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’anesthésiologie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La cardiologie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La chirurgie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La dermatologie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La gynécologie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La neurologie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’odontologie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La pédiatrie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La radiothérapie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’infectiologie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La médecine générale </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’ophtalmologie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La psychiatrie </font> </font> </a> </li>
+  <li> <a href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’urologie </font> </font> </a> </li>
+</ul>
+
+
+</section>
+<section style="width: 27cm;  vertical-align: top; display: inline-block;">
+<h1 style="background-color: #8546; width:30cm">Au coeur de vos services pour vous donner le meilleur de votre santé</h1>
+<h4>
+Dans chaque unité de soin, vous pouvez demander à rencontrer un-e- assistant-e- social-e-. Ces professionnels 
+sont là pour vous informer, vous soutenir, vous écouter et vous orienter. Ils font le lien entre l’hôpital et la vie extérieure. Ils peuvent vous aider dans vos démarches pour faciliter 
+vos soins, l’accès à vos droits, l’aide à la vie quotidienne et l’organisation de votre sortie.<p>Pour faciliter vos démarches, l’Assistance
+ Publique – Hôpitaux la Solution du Sénégal HSS vous propose de prendre rendez-vous en ligne pour les spécialités listées ci-coté.
+Ce service est progressivement déployé dans les differntes regions du Sénégal.
+La prise de rendez-vous reste disponible par téléphone aussi au: <br>
+contacts : +221338333333 / +221779231110 / +221761866569 / +221782297275.
+</h4></p>
+{% if app.user %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('consultation')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="/rendezvous/tous">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voir vos rendez-vous !!!</button>
+          </a></span></section>
+          {% else %}
+          <section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voire les rendez-vous ici !!!</button>
+          </a></span></section>
+          {% endif %}
+</section>
+
+
+
+
+{% endblock %}

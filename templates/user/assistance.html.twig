@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px solid black;">
+<aside style="display: inline-block;">
+<h1 style="background-color: blue">Nos spécialités</h1>
+	<ul class = "fil d'Ariane">
+  <li> <a href="{{path('immunologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’allergologie ou l’immunologie</font> </font> </a> </li>
+  <li> <a href="{{path('anesthesiologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’anesthésiologie </font> </font> </a> </li>
+  <li> <a href="{{path('cardiologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La cardiologie </font> </font> </a> </li>
+  <li> <a href="{{path('chirurgie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La chirurgie </font> </font> </a> </li>
+  <li> <a href="{{path('dermatologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La dermatologie </font> </font> </a> </li>
+  <li> <a href="{{path('gynecologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La gynécologie </font> </font> </a> </li>
+  <li> <a href="{{path('neurologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La neurologie </font> </font> </a> </li>
+  <li> <a href="{{path('odontologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’odontologie </font> </font> </a> </li>
+  <li> <a href="{{path('pediatrie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La pédiatrie </font> </font> </a> </li>
+  <li> <a href="{{path('radiotherapie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La radiothérapie </font> </font> </a> </li>
+  <li> <a href="{{path('infectiologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’infectiologie </font> </font> </a> </li>
+  <li> <a href="{{path('medecine_generale')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La médecine générale </font> </font> </a> </li>
+  <li> <a href="{{path('ophtalmologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’ophtalmologie </font> </font> </a> </li>
+  <li> <a href="{{path('psychiatrie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> La psychiatrie </font> </font> </a> </li>
+  <li> <a href="{{path('urologie')}}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> L’urologie </font> </font> </a> </li>
+</ul>
+
+
+</section>
+<section style="width: 27cm;  vertical-align: top; display: inline-block;">
+<h1 style="background-color: #8546; width:30cm"> Vous venez en consultation</h1>
+Vous venez en consultation HS-Sénégal<br>
+Nos hôpitaux proposent des consultations dans toutes les spécialités, pour tous les âges.
+Au moment de prendre rendez-vous, assurez-vous de :<br>
+
+-prévoir avant l'heure de rendez-vous un peu de temps pour trouver le service où vous consultez dans l'hôpital<br>
+-vous munir d'une lettre de votre médecin traitant, qui peut vous être demandée<br>
+-le jour du rendez-vous, apporter vos documents administratifs et médicaux<br>
+{% if app.user %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('consultation')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('voir_rendezvous')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voir vos rendez-vous !!!</button>
+          </a></span></section>
+          {% else %}
+          <section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voire les rendez-vous ici !!!</button>
+          </a></span></section>
+          {% endif %}
+<h1 style="background-color: #8546; width:30cm">La-qualite de vos soins</h1>
+
+ <h3>A l'HS-Sénégal, l'amélioration continue de la qualité des soins et la gestion des risques 
+ associés aux soins sont au cœur de nos préoccupations. Nous nous engageons à assurer des soins de qualité, 
+ qui soient pertinents pour le patient, dans le cadre d'une prise en charge adaptée.</h3>
+ <p>Tous nos services cliniques sont soumis à la démarche réglementaire de certification des établissements de santé, conduite par la Haute Autorité de Santé (HAS).
+Nous évaluons ainsi régulièrement la qualité et la sécurité des soins que nous dispensons. Nous utilisons 
+des indicateurs, qui sont publics et qui nous permettent d’améliorer sans cesse la qualité de nos prises en 
+charge. Nous procédons aussi à des audits qui vont plus loin que les évaluations requises.
+Nous suivons par exemple la prévention et la lutte contre les infections nosocomiales et avons un programme d’action déployé dans l’ensemble de l’AP-HP à ce sujet. Nous suivons également le soulagement de la douleur ou la satisfaction de nos patients, que nous mesurons en continu.</p>
+   {% if app.user %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('consultation')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('voir_rendezvous')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voir vos rendez-vous !!!</button>
+          </a></span></section>
+          {% else %}
+          <section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voire les rendez-vous ici !!!</button>
+          </a></span></section>
+          {% endif %}
+ <h1 style="background-color: #8546; width:30cm">Animations culturelles dans les hôpitaux</h1>
+<h3>L’AP-HP propose à ses patients plus de 9000 activités artistiques et culturelles chaque année et développe 
+une politique culturelle et de mieux-être au service des patients.</h3>
+<p>Les patients peuvent, selon leur état de santé et leurs souhaits, assister à des concerts, découvrir des expositions, participer à des visites de musée ou à des lectures. Certaines animations culturelles se font itinérantes et se déplacent à leur chevet. Ces actions sont menées grâce à l’implication des professionnels de l’AP-HP : référents culture, médiathécaires, animateurs culturels, cadres de santé, éducateurs spécialisés, 
+avec le soutien de partenaires extérieurs : associations, fondations, institutions culturelles.</p>
+{% if app.user %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('consultation')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('voir_rendezvous')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voir vos rendez-vous !!!</button>
+          </a></span></section>
+          {% else %}
+          <section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voire les rendez-vous ici !!!</button>
+          </a></span></section>
+          {% endif %}
+ <h1 style="background-color: #8546; width:30cm">Service d'urgence HS-Sénégal</h1>
+ <h3>EN CAS D’URGENCE MÉDICALE, APPELEZ LE2020</h3>
+La personne qui répond au téléphone vous demandera notamment :<br>
+
+-qui vous êtes : victime, témoin, proche, parent<br>
+-où vous êtes : adresse exacte où les secours doivent intervenir<br>
+-pourquoi vous appelez : combien de personnes à prendre en charge, gravité de leur état<br>
+-un numéro de téléphone où vous contacter rapidement<br>
+-Ne raccrochez pas sans y être invité.<br>
+-Essayez de vous exprimer clairement et précisément, puis écoutez attentivement les conseils donnés sur la 
+conduite à tenir avant l'arrivée des secours. Cela peut sauver une vie.<br>
+
+Les appels au 2020 sont reçus par le centre de réception des appels du SAMU. Dans chaque département, 
+le SAMU coordonne et régule l'utilisation des secours d'urgence. <br>
+L'HS-Sénnégal dispose de deux SAMU-Centres 15 : le SAMU 2020, le SAMU 1313.
+Il y a trois catégories de PASS à l’AP-HP : les généralistes, les bucco-dentaires, et les psychiatriques<br>
+EN CAS D’EMPOISONNEMENT
+ou d’ingestion possible d’un produit toxique, ne faites rien avaler à la personne et téléphonez au centre anti-poison (01 40 05 48 48 ouvert 24h/24) ou appelez le 15.
+
+<h1>LES SERVICES D'ACCUEIL DES URGENCES DE L'AP-HP</h1>
+L'Hs-Sénégal dispose de 5 services d'urgences générales pour les adultes et pour les enfants, et de 
+services d'urgences spécialisées. Les urgences spécialisées concernent la maternité et la gynécologie, 
+les mains, 
+l'ophtalmologie, les urgences céphalées, les dents, la dermatologie et l'ORL (nez, gorges, oreilles).
+{% if app.user %}
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('consultation')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('voir_rendezvous')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voir vos rendez-vous !!!</button>
+          </a></span></section>
+          {% else %}
+          <section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px ;"><a class="nav-link" href="{{path('inscription')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Prendre un rendez-vous ici !!!</button>
+          </a></section>
+<section style="width: 6cm;  vertical-align: top; display: inline-block; border: 1px; margin-left: 550px;"><a class="nav-link" href="{{path('app_login')}}">
+          <button class="btn btn-outline-success me-2" type="button" style="width: 4cm">Voire les rendez-vous ici !!!</button>
+          </a></span></section>
+          {% endif %}
+
+
+</section>
+{% endblock %}

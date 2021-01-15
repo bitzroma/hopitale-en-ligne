@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RendezVous index{% endblock %}
+
+{% block body %}
+    <h1>RendezVous index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numéro Rendez-vous</th>
+                <th>Type de Rendez-vous</th>
+                <th>Date et heure du rendez-vous</th>
+                <th>Lieu du rendez-vous</th>
+                <th>Docteur</th>
+                <th>Email du Patient</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+       
+        {% for rendez_vou in rendez_vouses %}
+            <tr>
+                <td>{{ rendez_vou.id }}</td>
+                <td>{{ rendez_vou.typeRv }}</td>
+                <td>{{ rendez_vou.dateRv ? rendez_vou.dateRv|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ rendez_vou.lieu }}</td>
+                <td>{{ rendez_vou.docteur }}</td>
+                {% if rendez_vou.user == app.user.email %}
+                <td>{{ rendez_vou.user }}</td>
+                {% endif %}
+                <td>
+                   {# <a href="{{ path('rendez_vous_show', {'id': rendez_vou.id}) }}">show</a>
+                    <a href="{{ path('rendez_vous_edit', {'id': rendez_vou.id}) }}">edit</a> #}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        
+        </tbody>
+    </table>
+
+   <button class="btn btn-outline-success" type="submit">  <a href="{{ path('consultation') }}">Nouveau rendez-vous</a> </button> 
+{% endblock %}
